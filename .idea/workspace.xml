@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d87216b1-2d44-4505-b780-069eeb34929f" name="变更" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="showDialogWithAdvancedSettings" value="true" />
+        <option name="useMavenConfig" value="true" />
+        <option name="usePluginRegistry" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="delegateBuildToMaven" value="true" />
+  </component>
+  <component name="ProjectId" id="2QrDCl45uo0lYxlq3aZvfpvwLqQ" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ToolWindow运行.ShowToolbar": "false",
+    "last_directory_selection": "D:/MyPlugin-Minecraft/GoFishing/src/org/plugin/yunxi/pluginMain",
+    "last_opened_file_path": "D:/MyPlugin-Minecraft/GoFishing",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.16844513",
+    "project.structure.side.proportion": "0.2127907",
+    "settings.editor.selected.configurable": "MavenSettings"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\MyPlugin-Minecraft\GoFishing\src" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.plugin.yunxi.color" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="GoFishing中的所有" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GoFishing" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.GoFishing中的所有" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="d87216b1-2d44-4505-b780-069eeb34929f" name="变更" comment="" />
+      <created>1686102687099</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1686102687099</updated>
+      <workItem from="1686102688288" duration="19926000" />
+      <workItem from="1686183892373" duration="5293000" />
+      <workItem from="1686205976622" duration="614000" />
+      <workItem from="1686214691860" duration="2081000" />
+      <workItem from="1686270288751" duration="4024000" />
+      <workItem from="1686274331839" duration="691000" />
+      <workItem from="1686275185450" duration="578000" />
+      <workItem from="1686275956625" duration="8056000" />
+      <workItem from="1686288918265" duration="166000" />
+      <workItem from="1686289507321" duration="491000" />
+      <workItem from="1686448586043" duration="1007000" />
+      <workItem from="1686726174112" duration="19000" />
+      <workItem from="1687134009807" duration="1159000" />
+      <workItem from="1687138426050" duration="62000" />
+      <workItem from="1687911217917" duration="194000" />
+      <workItem from="1687911550561" duration="1733000" />
+      <workItem from="1687928844461" duration="1148000" />
+      <workItem from="1687930639168" duration="611000" />
+    </task>
+    <servers />
+  </component>
+</project>

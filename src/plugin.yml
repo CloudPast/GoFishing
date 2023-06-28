@@ -1,0 +1,12 @@
+name: GoFishing
+main: org.plugin.yunxi.pluginMain.Main
+version: 0.0.5
+api-version: 1.13
+commands:
+  gfreload:
+    usage: /gfreload
+    description: 重载插件
+softdepend:
+  - PlaceholderAPI
+  - PlayerPoints
+  - Vault

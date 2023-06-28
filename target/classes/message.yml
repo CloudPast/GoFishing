@@ -1,0 +1,22 @@
+prefix: §6钓鱼助手 >>>§a
+message:
+  fishing: 抛竿!
+  reelIn: 收竿!
+  failedAttempt: 哦,真是的鱼跑掉了！
+  bite: 咬钩了
+  subBite: 是什么呢？
+  #这个地方可以使用%s %d %s为钓到的东西 %d是数量
+  getItem: 恭喜你获得了%d个%s！
+  notFish: 什么都没有呢~
+  #这个地方可以使用%s %s为钓到的东西
+  getEntity: 你成功钓到%s!
+  #这个地方可以使用%s %s为钓到的东西
+  notEntity: 尝试钓%s失败啦~
+  notMoney: 您的金币不足
+  # %d为数量
+  takeMoney: 成功花费%d金币
+  notPoint: 您的点券不足
+  # %d为数量
+  takePoint: 成功花费%d点券
+reload: 重载成功
+notPerm: 您无权限这么做
