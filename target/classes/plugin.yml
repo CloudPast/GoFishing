@@ -1,6 +1,6 @@
 name: GoFishing
 main: org.plugin.yunxi.pluginMain.Main
-version: 0.0.5
+version: 1.0.1
 api-version: 1.13
 commands:
   gfreload:

@@ -15,8 +15,10 @@ import java.io.File;
 import java.io.IOException;
 
 public class Main extends JavaPlugin {
-    private File customConfigFile;
-    private FileConfiguration customConfig;
+    private File message;
+    private File item;
+    private FileConfiguration messageConfig;
+    private FileConfiguration itemConfig;
     private boolean vault;
     private boolean point;
     private boolean papi;
@@ -29,19 +31,10 @@ public class Main extends JavaPlugin {
         if (Integer.parseInt(getServer().getBukkitVersion().substring(2, 4)) > 12) {
             saveDefaultConfig();
             createMessage();
+            createItemName();
             reloadConfig();
             Bukkit.getPluginManager().registerEvents(new Listening(),this);
             getCommand("gfreload").setExecutor(new Reload());
-            getLogger().info(cmd.getYellow() + "钓鱼功能: " + cmd.getReset());
-            getLogger().info(cmd.getYellow() + " |-当前概率: " + cmd.getGreen() + getConfig().getInt("fish.item.range") + "%" + cmd.getReset());
-            getLogger().info(cmd.getYellow() + " |-仅用指令: " + cmd.getGreen() + getConfig().getBoolean("fish.item.notItemDrop") + cmd.getReset());
-            getLogger().info(cmd.getYellow() + " |-原版物品: " + cmd.getGreen() + getConfig().getBoolean("fish.item.notFishType") + cmd.getReset());
-            getLogger().info(cmd.getYellow() + " |-执行命令: " + cmd.getGreen() + getConfig().getBoolean("fish.item.Consolecommand.type") + cmd.getReset());
-            getLogger().info(cmd.getYellow() + " |-随机命令: " + cmd.getGreen() + getConfig().getBoolean("fish.item.Consolecommand.randomType") + cmd.getReset());
-            getLogger().info(cmd.getYellow() + " |-钓鱼音效: " + cmd.getGreen() + getConfig().getBoolean("fish.item.sound.type") + cmd.getReset());
-            getLogger().info(cmd.getYellow() + "额外功能: " + cmd.getReset());
-            getLogger().info(cmd.getYellow() + " |-实体功能: " + cmd.getGreen() + getConfig().getBoolean("fishingEntity.type") + cmd.getReset());
-            getLogger().info(cmd.getYellow() + " |-当前概率: " + cmd.getGreen() + getConfig().getInt("fishingEntity.range") + "%" + cmd.getReset());
             if (getServer().getPluginManager().getPlugin("Vault") != null) {
                 RegisteredServiceProvider<Economy> r = this.getServer().getServicesManager().getRegistration(Economy.class);
                 if (r != null) {
@@ -82,17 +75,33 @@ public class Main extends JavaPlugin {
         return this.papi;
     }
     public FileConfiguration getMessage(){
-        return this.customConfig;
+        return this.messageConfig;
+    }
+    public FileConfiguration getitemName(){
+        return this.itemConfig;
     }
     public void createMessage(){
-        customConfigFile = new File(getDataFolder(),"message.yml");
-        if (!customConfigFile.exists()) {
-            customConfigFile.getParentFile().mkdirs();
+        message = new File(getDataFolder(),"message.yml");
+        if (!message.exists()) {
+            message.getParentFile().mkdirs();
             saveResource("message.yml", false);
         }
-        customConfig = new YamlConfiguration();
+        messageConfig = new YamlConfiguration();
         try{
-            customConfig.load(customConfigFile);
+            messageConfig.load(message);
+        } catch (IOException | InvalidConfigurationException e) {
+            e.printStackTrace();
+        }
+    }
+    public void createItemName(){
+        item = new File(getDataFolder(),"itemTranslations.yml");
+        if (!item.exists()) {
+            item.getParentFile().mkdirs();
+            saveResource("itemTranslations.yml", false);
+        }
+        itemConfig = new YamlConfiguration();
+        try{
+            itemConfig.load(item);
         } catch (IOException | InvalidConfigurationException e) {
             e.printStackTrace();
         }

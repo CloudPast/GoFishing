@@ -1,57 +1,53 @@
 #钓实体获得该实体刷怪蛋 重要 仅支持具有刷怪蛋的实体 末影龙什么的是没有的~
 fishingEntity:
-  #开关
-  type: true
-  #概率 50 = 50%
-  range: 50
-  #可钓的实体 需要在配置文件下面添加实体名字
-  entity:
-    #格式为 实体ID,money/point,数量
-    - PIG,money,500
-fish:
-  #钓到的物品
-  item:
-    #总开关
+  #世界列表
+  world:
+    #开关
     type: true
-    #下面概率没中将不会获得任何物品  true将会获得原版物品
-    notFishType: true
-    #下面false将会关闭获得物品 只执行指令
-    notItemDrop: true
     #概率 50 = 50%
     range: 50
-    #物品ID需大写 若关闭获得物品此项随意写请不要重复 格式 物品ID，最小随机数量，最大随机数量，概率     当你钓到这个物品时概率获得
+    #可钓的实体 需要在配置文件下面添加实体名字
+    entity:
+      #格式为 实体ID,money/point/none,数量 设置为none时 不管数量
+      - PIG,none,500
+fish:
+  #世界列表
+  world:
+    #总开关
+    type: true
+    #物品ID需大写 若关闭获得物品此项随意写请不要重复
+    #格式 物品ID，最小随机数量，最大随机数量，概率
+    #当此处的概率未通过则会钓到outMat或者原版的物品
+    #满概率 = 100% 概率: 随机挑选其中的物品,然后根据该物品的概率决定是否获得该物品
     mat:
-      - DIAMOND,1,3,33
-      - DIRT,1,3,33
-      - STONE,1,33
-    #默认的物品ID 概率未通过时获得的物品
-    defaultMat:
-      - DIRT,1,3
-    #钓到物品的音效
-    sound:
-      #开关
+      - DIAMOND,1,3,10%
+      - DIRT,1,3,33%
+      - STONE,1,3,33%
+    #获得到指定mat执行的命令
+    matCommand:
+      #true = 开 | false = 关
       type: true
-      #默认音效 不要删除 若不需要 请设置为false 比如 DIAMOND: false
-      sounds:
-        DIAMOND: BLOCK_BONE_BLOCK_HIT
-        DIRT: BLOCK_CHEST_CLOSE
-        STONE: BLOCK_BONE_BLOCK_PLACE
-    #钓到的物品执行指令
-    Consolecommand:
-      #开关
-      type: true
-      #随机执行指令 关闭则全部执行
-      randomType: true
+      #是否随机执行
+      random: ture
       item:
-      #物品ID 请上面的mat相同
         DIAMOND:
-        #执行指令
-          - say 1b
-          - say 2b
+          - say 钻石
+          - say 钻石2
         DIRT:
-          - say xxx
+          - say 泥土
+          - say 泥土2
         STONE:
-          - say xxx
+          - say 石头
+          - say 石头2
+    #未通过mat和defaultItem的概率则会钓出来 下面的物品会随机出现一个
+    outMat:
+      type: true
+      item:
+        - GLASS,1,3
+    #是否可以钓到原版物品 无视mat的概率
+    defaultItem:
+      type: false
+      range: 50%
 #message.yml 信息的开关
 message:
   #甩杆提示
@@ -62,17 +58,3 @@ message:
   failedAttempt: true
   #上钩了提示
   allBite: true
-  #钓到的物品信息
-  getItem: true
-  #没有钓鱼概率未中提示
-  notFish: true
-#实体翻译
-entity:
-  #例子  实体英文ID: 翻译名字
-  PIG: 猪
-#物品翻译
-mat:
-  #翻译- 物品英文ID: 物品名字 若关闭获得物品 此项不管
-  DIAMOND: 钻石
-  DIRT: 泥土
-  STONE: 石头

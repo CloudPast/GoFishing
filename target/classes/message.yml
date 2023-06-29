@@ -1,3 +1,4 @@
+#关于颜色代码 可以使用§或者#FFFF00十六进制颜色 例子 §1你好 或者 #FFF000你好
 prefix: §6钓鱼助手 >>>§a
 message:
   fishing: 抛竿!
@@ -5,18 +6,18 @@ message:
   failedAttempt: 哦,真是的鱼跑掉了！
   bite: 咬钩了
   subBite: 是什么呢？
-  #这个地方可以使用%s %d %s为钓到的东西 %d是数量
-  getItem: 恭喜你获得了%d个%s！
+  # %Item%为钓到的东西 %Amount%是数量
+  getItem: 恭喜你获得了%Amount%个%Item%！
   notFish: 什么都没有呢~
-  #这个地方可以使用%s %s为钓到的东西
-  getEntity: 你成功钓到%s!
-  #这个地方可以使用%s %s为钓到的东西
-  notEntity: 尝试钓%s失败啦~
+  # %Entity%为钓到的实体
+  getEntity: 你成功钓到%Entity%!
+  # %Entity%为钓到的实体
+  notEntity: 尝试钓%Entity%失败啦~
   notMoney: 您的金币不足
-  # %d为数量
-  takeMoney: 成功花费%d金币
+  # %Money%为数量
+  takeMoney: 成功花费%Money%金币
   notPoint: 您的点券不足
-  # %d为数量
-  takePoint: 成功花费%d点券
+  # %Point%为数量
+  takePoint: 成功花费%Point%点券
 reload: 重载成功
 notPerm: 您无权限这么做
