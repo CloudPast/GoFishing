@@ -1,5 +1,6 @@
 package org.plugin.yunxi.listening;
 
+import org.bukkit.block.Biome;
 import org.bukkit.entity.Item;
 import org.bukkit.persistence.PersistentDataType;
 import org.plugin.yunxi.color.Message;
@@ -182,30 +183,46 @@ public class Listening implements Listener {
                 boolean mat = true;
                 //获得mat物品
                 if (ran.nextDouble() < Double.parseDouble(getItem[3].split("%")[0])/100) {
-                    event.getPlayer().getInventory().addItem(matItem);
-                    mat = false;
-                    String itemName = getPlugin(Main.class).getitemName().getString(getItem[0]);
-                    //替换变量
-                    itemName = getPlugin(Main.class).getMessage().getString("prefix") + getPlugin(Main.class).getMessage().getString("message.getItem").replace("%Item%", itemName);
-                    itemName = itemName.replace("%Amount%", String.valueOf(matItem.getAmount()));
-                    event.getPlayer().sendMessage(message.Message(itemName));
-                    //判断是否启用指令功能
-                    if (this.plugin.getConfig().getBoolean("fish." + event.getPlayer().getWorld().getName() + ".matCommand.type")){
-                        //创建集合用于存储指令集群
-                        ArrayList<String> list = new ArrayList<>();
-                        //遍历并进行PlaceholderAPI解析 塞入集合中
-                        for (int i = 0; i < this.plugin.getConfig().getStringList("fish." + event.getPlayer().getWorld().getName() + ".matCommand.item." + getItem[0]).size(); i++) {
-                            list.add(PlaceholderAPI.setPlaceholders(event.getPlayer(),
-                                    this.plugin.getConfig()
-                                            .getStringList("fish." + event.getPlayer().getWorld().getName() + ".matCommand.item." + getItem[0])
-                                            .get(i)));
+                    Biome biome = event.getCaught().getLocation().getWorld().getBiome(event.getCaught().getLocation().getBlockX(),event.getCaught().getLocation().getBlockY(),event.getCaught().getLocation().getBlockZ());
+                    Biome playerBiome = event.getPlayer().getLocation().getWorld().getBiome(event.getPlayer().getLocation().getBlockX(),event.getPlayer().getLocation().getBlockY(),event.getPlayer().getLocation().getBlockZ());
+                    String[] fishiBiome = getItem[4].split("-");
+                    Boolean fishiMat = false;
+                    for (int i = 0; i < fishiBiome.length; i++) {
+                        if (biome.name().equals(fishiBiome[i])) {
+                            fishiMat = true;
+                            break;
                         }
-                        //判断是否开启随机指令
-                        if (this.plugin.getConfig().getBoolean("fish." + event.getPlayer().getWorld().getName() + ".matCommand.random")) {
-                            Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(),list.get(ran.nextInt(list.size())));
-                        } else {
-                            for (int i = 0; i < list.size(); i++) {
-                                Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(),list.get(i));
+                        if (playerBiome.name().equals(fishiBiome[i])) {
+                            fishiMat = true;
+                            break;
+                        }
+                    }
+                    if ("all".equals(getItem[4]) || fishiMat) {
+                        event.getPlayer().getInventory().addItem(matItem);
+                        mat = false;
+                        String itemName = getPlugin(Main.class).getitemName().getString(getItem[0]);
+                        //替换变量
+                        itemName = getPlugin(Main.class).getMessage().getString("prefix") + getPlugin(Main.class).getMessage().getString("message.getItem").replace("%Item%", itemName);
+                        itemName = itemName.replace("%Amount%", String.valueOf(matItem.getAmount()));
+                        event.getPlayer().sendMessage(message.Message(itemName));
+                        //判断是否启用指令功能
+                        if (this.plugin.getConfig().getBoolean("fish." + event.getPlayer().getWorld().getName() + ".matCommand.type")){
+                            //创建集合用于存储指令集群
+                            ArrayList<String> list = new ArrayList<>();
+                            //遍历并进行PlaceholderAPI解析 塞入集合中
+                            for (int i = 0; i < this.plugin.getConfig().getStringList("fish." + event.getPlayer().getWorld().getName() + ".matCommand.item." + getItem[0]).size(); i++) {
+                                list.add(PlaceholderAPI.setPlaceholders(event.getPlayer(),
+                                        this.plugin.getConfig()
+                                                .getStringList("fish." + event.getPlayer().getWorld().getName() + ".matCommand.item." + getItem[0])
+                                                .get(i)));
+                            }
+                            //判断是否开启随机指令
+                            if (this.plugin.getConfig().getBoolean("fish." + event.getPlayer().getWorld().getName() + ".matCommand.random")) {
+                                Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(),list.get(ran.nextInt(list.size())));
+                            } else {
+                                for (int i = 0; i < list.size(); i++) {
+                                    Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(),list.get(i));
+                                }
                             }
                         }
                     }
@@ -228,8 +245,10 @@ public class Listening implements Listener {
                         event.getPlayer().sendMessage(message.Message(itemName));
                         return;
                     }
+                } else {
+                    event.getCaught().remove();
                 }
-                if (!this.plugin.getConfig().getBoolean("fish." + event.getPlayer().getWorld().getName() + ".outMat.type")) {
+                if (!this.plugin.getConfig().getBoolean("fish." + event.getPlayer().getWorld().getName() + ".outMat.type") && mat) {
                     String message = getPlugin(Main.class).getMessage().getString("prefix") + getPlugin(Main.class).getMessage().getString("message.notFish");
                     event.getPlayer().sendMessage(this.message.Message(message));
                     return;

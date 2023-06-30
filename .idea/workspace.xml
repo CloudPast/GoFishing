@@ -41,23 +41,23 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;ToolWindow运行.ShowToolbar&quot;: &quot;false&quot;,
-    &quot;last_directory_selection&quot;: &quot;D:/MyPlugin-Minecraft/GoFishing/src/org/plugin/yunxi/pluginMain&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/MyPlugin-Minecraft/GoFishing&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;项目&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.16844513&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2127907&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ToolWindow运行.ShowToolbar": "false",
+    "last_directory_selection": "D:/MyPlugin-Minecraft/GoFishing/src/org/plugin/yunxi/pluginMain",
+    "last_opened_file_path": "D:/文档/GitHub/GoFishing",
+    "project.structure.last.edited": "项目",
+    "project.structure.proportion": "0.16844513",
+    "project.structure.side.proportion": "0.2127907",
+    "settings.editor.selected.configurable": "advanced.settings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\文档\GitHub\GoFishing\src" />
@@ -114,7 +114,9 @@
       <workItem from="1688000972414" duration="898000" />
       <workItem from="1688002860702" duration="117000" />
       <workItem from="1688003148056" duration="15238000" />
-      <workItem from="1688023373292" duration="2968000" />
+      <workItem from="1688023373292" duration="4115000" />
+      <workItem from="1688087965571" duration="13000" />
+      <workItem from="1688089748475" duration="5665000" />
     </task>
     <servers />
   </component>

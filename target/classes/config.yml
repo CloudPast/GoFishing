@@ -16,19 +16,20 @@ fish:
     #总开关
     type: true
     #物品ID需大写 若关闭获得物品此项随意写请不要重复
-    #格式 物品ID，最小随机数量，最大随机数量，概率
+    #格式 物品ID,最小随机数量,最大随机数量,概率,可以钓到的群系   ps:all可以在任何群系钓出来
+    #多个群系用-来分隔 如 FOREST-RIVER 需全大写
     #当此处的概率未通过则会钓到outMat或者原版的物品
     #满概率 = 100% 概率: 随机挑选其中的物品,然后根据该物品的概率决定是否获得该物品
     mat:
-      - DIAMOND,1,3,10%
-      - DIRT,1,3,33%
-      - STONE,1,3,33%
+      - DIAMOND,1,3,10%,OLD_GROWTH_BIRCH_FOREST-FOREST
+      - DIRT,1,3,33%,all
+      - STONE,1,3,33%,all
     #获得到指定mat执行的命令
     matCommand:
       #true = 开 | false = 关
       type: true
       #是否随机执行
-      random: ture
+      random: true
       item:
         DIAMOND:
           - say 钻石
