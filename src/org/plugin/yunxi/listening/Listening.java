@@ -183,9 +183,13 @@ public class Listening implements Listener {
                 boolean mat = true;
                 //获得mat物品
                 if (ran.nextDouble() < Double.parseDouble(getItem[3].split("%")[0])/100) {
+                    //判断钓到的所处群系
                     Biome biome = event.getCaught().getLocation().getWorld().getBiome(event.getCaught().getLocation().getBlockX(),event.getCaught().getLocation().getBlockY(),event.getCaught().getLocation().getBlockZ());
+                    //判断玩家的所处群系
                     Biome playerBiome = event.getPlayer().getLocation().getWorld().getBiome(event.getPlayer().getLocation().getBlockX(),event.getPlayer().getLocation().getBlockY(),event.getPlayer().getLocation().getBlockZ());
+                    //分割配置文件
                     String[] fishiBiome = getItem[4].split("-");
+                    //判断群系
                     Boolean fishiMat = false;
                     for (int i = 0; i < fishiBiome.length; i++) {
                         if (biome.name().equals(fishiBiome[i])) {
